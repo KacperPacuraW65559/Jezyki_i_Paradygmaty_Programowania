@@ -1,0 +1,117 @@
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.6.4)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free softe. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- 3>2
+|    3>2.
+ERROR: Syntax error: Operator expected
+ERROR: 3>2
+ERROR: ** here **
+ERROR: 
+3>2 . 
+?- 3>2.
+true.
+
+?- 2>3.
+false.
+
+?- X = 2.
+X = 2.
+
+?- y = 2.
+false.
+
+?- 2 = X.
+X = 2.
+
+?- lubi(ala,X).
+ERROR: Undefined procedure: lubi/2 (DWIM could not correct goal)
+?- lubi(ala,X).
+X = koty .
+
+?- lubi(ala,Co).
+Co = koty 
+Unknown action:  (h for help)
+Action? 
+Unknown action: (h for help)
+Action? .
+
+?- lubi(ala,Co).
+Co = koty .
+
+?- lubi(ala,Co).
+Co = koty ;
+Co = jablko ;
+Co = psy.
+
+?- kobieta(marek).
+false.
+
+?- kobieta(ala).\
+|    .
+ERROR: Syntax error: Operator expected
+ERROR: kobieta(ala
+ERROR: ** here **
+ERROR: ).\ . 
+?- kobieta(ala).
+true.
+
+?- kobieta(X).
+X = ala ;
+X = joanna.
+
+?- kobieta(x).
+false.
+
+?- lubi(ala,koty),lubi(marek,psy).
+true 
+Unknown action:  (h for help)
+Action? 
+Unknown action:  (h for help)
+Action? 
+Unknown action:  (h for help)
+Action? .
+
+?- lubi(ala,loty),lubi(marek,koty).
+false.
+
+?- lubi(ala,loty),lubi(marek,psy).
+false.
+
+?- lubi(ala,koty),lubi(marek,psy).
+true 
+Unknown action:  (h for help)
+Action? .
+
+?- lubi(ala,koty);lubi(marek,psy).
+true ;
+true.
+
+?- kobieta(ala),kobieta(joanna).
+true.
+
+?- kobieta(ala);mezczyzna(ala).
+true 
+Unknown action:  (h for help)
+Action? 
+Unknown action:  (h for help)
+Action? .
+
+?- kobieta(ala);mzczyzna(ala).
+Correct to: "mezczyzna(ala)"? 
+Please answer 'y' or 'n'? yes
+true .
+
+?- .
+
+ERROR: Stream user_input:107:4 Syntax error: Unexpected end of clause
+?- lubi1(ala,X).
+X = marek ;
+false.
+
+?- lubi1(ala,X).
+X = marek .
+
+?- 
