@@ -1,0 +1,91 @@
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.6.4)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- trace.
+true.
+
+[trace]  ?- silnia(0,X).
+ERROR: Undefined procedure: silnia/2 (DWIM could not correct goal)
+[trace]  ?- 
+Warning: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:31:
+        Singleton variables: [Wynik]
+[trace]  ?- 
+|    silnia(0,X).
+   Call: (8) silnia(0, _2270) ? creep
+   Exit: (8) silnia(0, 1) ? creep
+X = 1 .
+
+[trace]  ?- silnia(3,X).
+   Call: (8) silnia(3, _2270) ? creep
+   Call: (9) 3>0 ? creep
+   Exit: (9) 3>0 ? creep
+   Call: (9) _2494 is 3+ -1 ? creep
+   Exit: (9) 2 is 3+ -1 ? creep
+   Call: (9) silnia(2, _2496) ? creep
+   Call: (10) 2>0 ? creep
+   Exit: (10) 2>0 ? creep
+   Call: (10) _2500 is 2+ -1 ? creep
+   Exit: (10) 1 is 2+ -1 ? creep
+   Call: (10) silnia(1, _2502) ? creep
+   Call: (11) 1>0 ? creep
+   Exit: (11) 1>0 ? creep
+   Call: (11) _2506 is 1+ -1 ? creep
+   Exit: (11) 0 is 1+ -1 ? creep
+   Call: (11) silnia(0, _2508) ? creep
+   Exit: (11) silnia(0, 1) ? creep
+   Call: (11) wynik is 1*1 ? creep
+   Fail: (11) wynik is 1*1 ? creep
+   Redo: (11) silnia(0, _2508) ? creep
+   Call: (12) 0>0 ? creep
+   Fail: (12) 0>0 ? creep
+   Fail: (11) silnia(0, _2508) ? creep
+   Fail: (10) silnia(1, _2502) ? creep
+   Fail: (9) silnia(2, _2496) ? creep
+   Fail: (8) silnia(3, _2270) ? creep
+false.
+
+[trace]  ?- notrace.
+true.
+
+[debug]  ?- silnia(3,X).
+false.
+
+[debug]  ?- nodebug.
+true.
+
+?- 
+Warning: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:31:
+        Singleton variables: [Wynik]
+ERROR: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:41:
+        Full stop in clause-body?  Cannot redefine ,/2
+Warning: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:31:
+        Singleton variables: [Wynik]
+ERROR: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:41:
+        Full stop in clause-body?  Cannot redefine ,/2
+Warning: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:61:
+        Singleton variables: [Wynik]
+?- 
+|    main.
+false.
+
+?- 
+Warning: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:31:
+        Singleton variables: [Wynik]
+ERROR: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:41:
+        Full stop in clause-body?  Cannot redefine ,/2
+Warning: c:/users/w65559/documents/prolog/zadanie_2_lab3.pl:61:
+        Singleton variables: [Wynik]
+?- 
+|    hanoi(3,A,B,C).
+Przenies dysk 1 z _1992 na _1994
+Przenies dysk 2 z _1992 na _1996
+Przenies dysk 1 z _1994 na _1996
+Przenies dysk 3 z _1992 na _1994
+Przenies dysk 1 z _1996 na _1992
+Przenies dysk 2 z _1996 na _1994
+Przenies dysk 1 z _1992 na _1994
+true 
