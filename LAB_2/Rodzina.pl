@@ -1,0 +1,39 @@
+rodzic(zofia,marcin).
+rodzic(andrzej,marcin).
+rodzic(andrzej,kasia).
+rodzic(marcin,ania).
+rodzic(marcin,krzyœ).
+rodzic(krzyœ,miko³aj).
+
+kobieta(zofia).
+kobieta(kasia).
+kobieta(ania).
+mê¿czyzna(andrzej).
+mê¿czyzna(marcin).
+mê¿czyzna(krzyœ).
+mê¿czyzna(miko³aj).
+
+%b.
+potomek(X,Y):-rodzic(Y,X).
+%c.
+matka(X,Y):-
+    rodzic(X,Y),
+    kobieta(X).
+%d.
+dziadek(X,Z):-
+    rodzic(X,Y),
+    rodzic(Y,Z),
+    mê¿czyzna(X).
+%e.
+siostra(X,Y):-
+    rodzic(Z,Y),
+    rodzic(Z,X),
+    X\=Y,
+    kobieta(X).
+%f.
+przodek(X,Y):-
+    rodzic(X,Y).
+
+przodek(X,Y):-
+    rodzic(Z,Y),
+    przodek(X,Z).
